@@ -1,0 +1,30 @@
+"use strict";
+
+function calcAge(birthYear) {
+  const age = 2024 - birthYear;
+
+  function printAge() {
+    const output = `${firstName} you are ${age} years old`;
+    console.log(output);
+
+    //......BLOCK SCOPE........
+
+    if (birthYear >= 1986 && birthYear <= 1996) {
+      var millinial = true;
+      const isit = "yes";
+      console.log(`So you are a millenial`);
+    }
+  }
+
+  // console.log(millinial); // tHIS WILL ALSO NOT WORK
+
+  printAge();
+
+  //console.log(millinial); // WILL NOT WORK AS THE SCOPE OF MILLENIAL IS ONLY IN PRINTAGE FUNCTION
+
+  console.log(isit); // This will also not work
+}
+
+const firstName = "Shweta";
+
+console.log(calcAge(1994));
